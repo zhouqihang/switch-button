@@ -1,0 +1,99 @@
+.switch-btn {
+    width: 50px;
+    height: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.switch-btn * {
+    margin: 0;
+    padding: 0;
+}
+
+/*default*/
+.switch-btn > input[type='checkbox'],
+.switch-btn > label {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+
+.switch-btn > input[type='checkbox'] {
+    z-index: 100;
+    opacity: 0;
+}
+
+.switch-btn > label {
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    background-color: #d5d5d5;
+}
+
+.switch-btn > label::after {
+    content: '';
+    width: 26px;
+    height: 26px;
+    background-color: #eeeeee;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+}
+
+.switch-btn > label,
+.switch-btn > label::after {
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+
+.switch-btn > input[type='checkbox']:hover + label::after {
+    -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.switch-btn > input[type='checkbox']:checked + label {
+    background-color: #c0c0c0;
+}
+
+.switch-btn > input[type='checkbox']:checked + label:after {
+    left: 50%;
+}
+
+.switch-btn > input[type='checkbox']:disabled {
+    cursor: not-allowed;
+}
+
+/*primary*/
+.switch-btn.switch-primary > input[type='checkbox']:checked + label {
+    background-color: #3498db;
+}
+
+/*success*/
+.switch-btn.switch-success > input[type='checkbox']:checked + label {
+    background-color: #2ecc71;
+}
+
+/*danger*/
+.switch-btn.switch-danger > input[type='checkbox']:checked + label {
+    background-color: #e74c3c;
+}
+
+/*warning*/
+.switch-btn.switch-warning > input[type='checkbox']:checked + label {
+    background-color: #eea236;
+}
+
+/*info*/
+.switch-btn.switch-info > input[type='checkbox']:checked + label {
+    background-color: #46b8da;
+}
