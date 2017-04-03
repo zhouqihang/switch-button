@@ -32,22 +32,22 @@
 <script src="../source/switch-button.js"></script>
 <script>
 
-//    var sb = document.querySelectorAll('.switch-btn');
-//    switchBtn({
-//        elements: sb,
-//        on: function () {
-//            console.log(this, 'on');
-//            return true;
-//        },
-//        off: function () {
-//            console.log(this, 'off');
-//            return true;
-//        },
-//        changed: function () {
-//            console.log(this, 'changed');
-//            return true;
-//        }
-//    });
+    var sbs = document.querySelectorAll('.switch-btn');
+    switchBtn({
+        elements: sbs,
+        on: function () {
+            console.log(this, 'on');
+            return true;
+        },
+        off: function () {
+            console.log(this, 'off');
+            return false;
+        },
+        changed: function () {
+            console.log(this, 'changed');
+            return true;
+        }
+    });
 </script>
 </body>
 </html>
