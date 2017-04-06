@@ -29,6 +29,28 @@
     <label></label>
 </div>
 
+<!--inside switch-button-->
+<div class="switch-btn inside">
+    <input type="checkbox" name="switch">
+    <label></label>
+</div>
+<!--disabled-->
+<div class="switch-btn inside">
+    <input type="checkbox" name="switch" disabled>
+    <label></label>
+</div>
+
+<!--dynamic switch-button-->
+<div class="switch-btn dynamic">
+    <input type="checkbox" name="switch">
+    <label></label>
+</div>
+<!--disabled-->
+<div class="switch-btn dynamic">
+    <input type="checkbox" name="switch" disabled>
+    <label></label>
+</div>
+
 <script src="../source/switch-button.js"></script>
 <script>
 
@@ -41,7 +63,7 @@
         },
         off: function () {
             console.log(this, 'off');
-            return false;
+            return true;
         },
         changed: function () {
             console.log(this, 'changed');

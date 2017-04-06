@@ -8,6 +8,9 @@
 .switch-btn * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /*******************/
@@ -102,4 +105,60 @@
 }
 .switch-btn.slide > input[type='checkbox']:checked + label::after {
     background-color: #2ecc71;
+}
+
+
+/***********************/
+/*inside*/
+.switch-btn.inside > label::after,
+.switch-btn.dynamic > label::after {
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 4px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.switch-btn.inside > input[type='checkbox']:checked + label,
+.switch-btn.dynamic > input[type='checkbox']:checked + label {
+    background-color: #3498db;
+}
+.switch-btn.dynamic > input[type='checkbox']:checked + label::after,
+.switch-btn.inside > input[type='checkbox']:checked + label::after {
+    left: 30px;
+}
+
+
+/*********************/
+/*dynamic*/
+.switch-btn.dynamic > label {
+    background-color: transparent;
+    border: 3px solid #e0e0e0;
+    text-align: center;
+}
+.switch-btn.dynamic > label::after {
+    width: 8px;
+    height: 8px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 5px;
+    background-color: #e0e0e0;
+}
+.switch-btn.dynamic > input[type='checkbox']:hover + label::after {
+    width: 8px;
+    height: 8px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.switch-btn.dynamic > input[type='checkbox']:checked + label {
+    border: 3px solid #3498db;
+}
+.switch-btn.dynamic > input[type='checkbox']:checked + label::after {
+    width: 16px;
+    height: 16px;
+    left: 27px;
+    background-color: #fff;
 }

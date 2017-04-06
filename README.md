@@ -106,3 +106,25 @@ iOS和Android风格的切换按钮
 </div>
 
 ```
+
+* #### inside
+
+```html
+
+<div class="switch-btn inside">
+    <input type="checkbox" name="switch">
+    <label></label>
+</div>
+
+```
+
+* #### dynamic
+
+```html
+
+<div class="switch-btn dynamic">
+    <input type="checkbox" name="switch">
+    <label></label>
+</div>
+
+```
