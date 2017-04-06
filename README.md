@@ -22,6 +22,8 @@ iOS和Android风格的切换按钮
 
 ```
 
+***
+
 ### 使用JavaScript
 
 使用JavaScript，你可以在按钮状态将要切换或状态切换完成后做一些事情。
@@ -79,13 +81,17 @@ iOS和Android风格的切换按钮
 
 ```
 
+***
+
 ### 使用jQuery
 
 待完成
 
+***
+
 ### 更多样式
 
-* ##### switch-btn (默认)
+##### switch-btn (默认)
 
 ```html
 
@@ -96,7 +102,7 @@ iOS和Android风格的切换按钮
 
 ```
 
-* ##### slide
+##### slide
 
 ```html
 
@@ -107,7 +113,7 @@ iOS和Android风格的切换按钮
 
 ```
 
-* #### inside
+#### inside
 
 ```html
 
@@ -118,7 +124,7 @@ iOS和Android风格的切换按钮
 
 ```
 
-* #### dynamic
+#### dynamic
 
 ```html
 
