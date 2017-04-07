@@ -85,7 +85,36 @@ iOS和Android风格的切换按钮
 
 ### 使用jQuery
 
-待完成
+```html
+
+$('.btn').switchbutton({
+    type: 'inside',
+    on: function () {
+        console.log(this, 'on', this.checked);
+        return true;
+    },
+    changed: function () {
+        console.log(this, 'changed', this.checked);
+        return true;
+    },
+    off: function () {
+        console.log(this, 'off', this.checked);
+        return true;
+    }
+});
+
+```
+
+或者这样
+
+```html
+
+$('.btn').switchbutton('off', 'dynamic', function () {
+    console.log(this.checked);
+    return true;
+});
+
+```
 
 ***
 
