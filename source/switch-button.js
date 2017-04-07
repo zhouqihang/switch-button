@@ -92,31 +92,35 @@
          * @private
          */
         _toggle: function (e) {
-            var res = true;                 // 监视返回值
             var checkbox = e.target;        // CheckBox选择框
 
             // 开关即将被打开
             // 验证是否允许打开开关
             // on 和 changed返回值都为true时打开
             if (checkbox.checked) {
+                // 保证在change之前，使用ON操作得到的为false
+                checkbox.checked = !checkbox.checked;
                 // 更改内部this指向，方便调用
-                res = this.on.call(checkbox);
-                res = res ? this.changed.call(checkbox) : res;
+                if (this.on.call(checkbox) === true) {
+                    checkbox.checked = !checkbox.checked;
+                    if (this.changed.call(checkbox) !== true) {
+                        checkbox.checked = !checkbox.checked;
+                    }
+                }
             }
 
             // 开关即将被关闭
             // 验证是否允许关闭开关
             // off 和 changed返回值都为true时关闭
             if (!checkbox.checked) {
-                res = this.off.call(checkbox);
-                res = res ? this.changed.call(checkbox) : res;
-            }
-
-            // 返回值不为true，不允许执行操作
-            if (!res) {
                 checkbox.checked = !checkbox.checked;
+                if (this.off.call(checkbox) === true) {
+                    checkbox.checked = !checkbox.checked;
+                    if (this.changed.call(checkbox) !== true) {
+                        checkbox.checked = !checkbox.checked;
+                    }
+                }
             }
-            return false;
         }
     };
 
