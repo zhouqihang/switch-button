@@ -51,25 +51,54 @@
     <label></label>
 </div>
 
+<!--jQuery-->
+<div class="btn">
+</div>
+<div class="btn2"></div>
+
 <script src="../source/switch-button.js"></script>
+<script src="jquery-3.1.1.js"></script>
+<script src="../source/jquery.switchbutton.js"></script>
 <script>
 
     var sbs = document.querySelectorAll('.switch-btn');
     switchBtn({
         elements: sbs,
         on: function () {
-            console.log(this, 'on');
+            console.log(this, 'on', this.checked);
             return true;
         },
         off: function () {
-            console.log(this, 'off');
-            return true;
+            console.log(this, 'off', this.checked);
+            return false;
         },
         changed: function () {
-            console.log(this, 'changed');
+            console.log(this, 'changed', this.checked);
             return true;
         }
     });
+
+    $('.btn').switchbutton({
+        type: 'inside',
+        on: function () {
+            console.log(this, 'on', this.checked);
+            return true;
+        },
+        changed: function () {
+            console.log(this, 'changed', this.checked);
+            return true;
+        },
+        off: function () {
+            console.log(this, 'off', this.checked);
+            return true;
+        }
+    });
+
+    $('.btn2').switchbutton('off', 'dynamic', function () {
+        console.log(this.checked);
+        return true;
+    });
+
 </script>
 </body>
 </html>
